@@ -11,7 +11,10 @@ export default class ProductList extends Component {
             return (
               <div className="col-4" key={index}>
                 {" "}
-                <ProductItem prod={prod} />
+                <ProductItem
+                  prod={prod}
+                  setStateModal={this.props.setStateModal}
+                />
               </div>
             );
           })}

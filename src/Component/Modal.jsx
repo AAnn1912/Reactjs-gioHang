@@ -2,6 +2,8 @@ import React, { Component } from "react";
 
 export default class Modal extends Component {
   render() {
+    let { content } = this.props;
+
     return (
       <div
         className="modal fade"
@@ -22,7 +24,7 @@ export default class Modal extends Component {
           <div className="modal-content" style={{ maxWidth: "900px" }}>
             <div className="modal-header">
               <h5 className="modal-title" id="modalTitleId">
-                Giỏ hàng
+                Chi Tiết
               </h5>
               <button
                 type="button"
@@ -38,12 +40,24 @@ export default class Modal extends Component {
                     <td>Mã SP</td>
                     <td>Tên SP</td>
                     <td>Hình Ảnh</td>
-                    <td>Số lượng</td>
                     <td>Đơn giá</td>
-                    <td>Tổng tiền</td>
                   </tr>
                 </thead>
-                {/* <tbody>{this.renderGioHang()}</tbody> */}
+                <tbody>
+                  <tr>
+                    <td>{content.id}</td>
+                    <td>{content.name}</td>
+                    <td>
+                      <img
+                        src={content.image}
+                        alt=""
+                        width={100}
+                        height={100}
+                      />
+                    </td>
+                    <td>{content.price}</td>
+                  </tr>
+                </tbody>
               </table>
             </div>
             <div className="modal-footer">
